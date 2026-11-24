@@ -54,6 +54,7 @@ const orgLd = () => {
   if (SITE.legalName) o.legalName = SITE.legalName;
   if (BASE) { o.url = BASE; o.logo = BASE + '/assets/logo.svg'; }
   if (SITE.email) o.email = SITE.email;
+  if (SITE.linkedin) o.sameAs = [SITE.linkedin];
   return JSON.stringify(o).replace(/</g, '\\u003c');
 };
 

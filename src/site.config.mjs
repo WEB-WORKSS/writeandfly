@@ -7,7 +7,8 @@ export const SITE = {
   positioning: 'Empowering global ambitions through language, education, and opportunity.',
   statement: 'Writeandfly helps students and professionals in developing countries choose the right destination, language and international exam, then follow a step-by-step plan with guidance from people who have already made the move.',
   domain: '',            // e.g. 'writeandfly.com' once confirmed. Enables canonical URLs, sitemap and Organization url.
-  email: '',             // official address on the same domain as the website, e.g. hello@<domain>
+  email: 'abdulmalik@writeandfly.site', // official address on the same domain as the website, e.g. hello@<domain>
+  linkedin: 'https://www.linkedin.com/company/writeandfly', // company page
   founded: 2026,
   stage: 'In development',
   status: 'In development · Early-access list open',

@@ -184,7 +184,7 @@ ${aiSection(url)}
 <div class="grid g3">${SAFEGUARDS.map(([h, p]) => `<div class="card"><h3>${h}</h3><p>${p}</p></div>`).join('')}<div class="card"><h3>Read the detail</h3><p>Data handling, access roles, audit trail and what is not built yet.</p><a class="text-link" href="${url('/security')}">Security and safeguards</a></div></div></div></section>
 
 <section class="band"><div class="wrap split"><div class="stack-y"><span class="kicker">Team</span><h2>Founded in ${SITE.founded} by ${SITE.founders[0].name}</h2><p class="lede">Writeandfly is an early-stage, privately held company building its first product.</p><p><a class="text-link" href="${url('/about', 'team')}">Meet the team</a></p></div>
-<div class="person"><span class="avatar" aria-hidden="true">AY</span><div class="stack-y" style="gap:6px"><h3>${SITE.founders[0].name}</h3><p class="muted">${SITE.founders[0].title}</p><a class="text-link" href="${SITE.founders[0].linkedin}" rel="noopener">LinkedIn profile</a></div></div></div></section>
+<div class="person"><span class="avatar" aria-hidden="true">AY</span><div class="stack-y" style="gap:6px"><h3>${SITE.founders[0].name}</h3><p class="muted">${SITE.founders[0].title}</p>${SITE.email ? `<a class="text-link" href="mailto:${SITE.email}">${SITE.email}</a>` : ''}<a class="text-link" href="${SITE.founders[0].linkedin}" rel="noopener">LinkedIn profile</a>${SITE.linkedin ? `<a class="text-link" href="${SITE.linkedin}" rel="noopener">${SITE.name} on LinkedIn</a>` : ''}</div></div></div></section>
 
 ${cta(url)}`
 });
@@ -321,9 +321,9 @@ const about = ({ url, SITE }) => ({
 <div class="card"><h3>Company facts</h3><div class="scroll"><table class="mini-table"><tbody>
 <tr><th>Name</th><td>${SITE.name}</td></tr>${SITE.legalName ? `<tr><th>Legal entity</th><td>${SITE.legalName}${SITE.country ? ', ' + SITE.country : ''}</td></tr>` : ''}
 <tr><th>Founded</th><td>${SITE.founded}</td></tr><tr><th>Company type</th><td>Privately held</td></tr><tr><th>Stage</th><td>Building initial product</td></tr>
-<tr><th>Industry</th><td>AI-powered EdTech, global mobility and career technology</td></tr>${SITE.address ? `<tr><th>Address</th><td>${SITE.address}</td></tr>` : ''}</tbody></table></div></div></div></section>
+<tr><th>Industry</th><td>AI-powered EdTech, global mobility and career technology</td></tr>${SITE.email ? `<tr><th>Company email</th><td><a href="mailto:${SITE.email}">${SITE.email}</a></td></tr>` : ''}${SITE.linkedin ? `<tr><th>Company page</th><td><a href="${SITE.linkedin}" rel="noopener">${SITE.linkedin.replace('https://www.','')}</a></td></tr>` : ''}${SITE.address ? `<tr><th>Address</th><td>${SITE.address}</td></tr>` : ''}</tbody></table></div></div></div></section>
 <section class="band tint" id="team"><div class="wrap"><div class="sec-head"><span class="kicker">Team</span><h2>Who is building Writeandfly</h2></div>
-${SITE.founders.map(f => `<div class="person"><span class="avatar" aria-hidden="true">${f.name.split(' ').map(w => w[0]).join('')}</span><div class="stack-y" style="gap:8px"><h3>${f.name}</h3><p class="muted">${f.title}, ${SITE.name}</p><a class="text-link" href="${f.linkedin}" rel="noopener">LinkedIn profile</a></div></div>`).join('')}</div></section>
+${SITE.founders.map(f => `<div class="person"><span class="avatar" aria-hidden="true">${f.name.split(' ').map(w => w[0]).join('')}</span><div class="stack-y" style="gap:8px"><h3>${f.name}</h3><p class="muted">${f.title}, ${SITE.name}</p>${SITE.email ? `<a class="text-link" href="mailto:${SITE.email}">${SITE.email}</a>` : ''}<a class="text-link" href="${f.linkedin}" rel="noopener">LinkedIn profile</a>${SITE.linkedin ? `<a class="text-link" href="${SITE.linkedin}" rel="noopener">${SITE.name} on LinkedIn</a>` : ''}</div></div>`).join('')}</div></section>
 <section class="band"><div class="wrap"><div class="sec-head"><h2>What we believe</h2></div><div class="grid g3">
 <div class="card"><h3>Honest information</h3><p>We link to official sources, say when something is uncertain, and never promise outcomes.</p></div>
 <div class="card"><h3>Independent advice</h3><p>Recommendations are based on fit, not on commissions from schools or agencies.</p></div>

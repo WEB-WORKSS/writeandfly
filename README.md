@@ -21,6 +21,8 @@ node serve.mjs            # serves dist/ at http://localhost:4173 (unknown paths
 2. Add a CloudFront Function that rewrites `/product` and `/product/` to `/product/index.html`, and set the custom error response for 403/404 to `/404.html` with status 404.
 3. The contact form posts JSON to `formEndpoint` in `site.config.mjs`. A Lambda function URL or API Gateway route that writes to DynamoDB and/or sends an email through SES works. **Until this is set, the form shows an error and points people to the founder's LinkedIn.**
 
+**Vercel:** `vercel.json` runs `node build.mjs` and serves `dist/`, with clean URLs and the 404 page. No settings needed in the Vercel dashboard (leave Framework Preset as "Other").
+
 Amplify Hosting and Netlify serve `dist/` as-is.
 
 ## Before you publish: facts to fill in or confirm

@@ -1,0 +1,13 @@
+{
+  "name": "writeandfly",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "preview": "node build.mjs --preview",
+    "start": "node serve.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
